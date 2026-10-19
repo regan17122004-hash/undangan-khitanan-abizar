@@ -90,16 +90,25 @@
     <p class="rsvp-note">Mohon kesediaannya mengisi konfirmasi berikut agar kami dapat menyambut kehadiran Anda.</p>
     <form id="rsvp">
       <label for="n">Nama</label>
-      <input id="n" required autocomplete="name">
-      <label for="h">Hadir pada</label>
-      <select id="h">
-        <option>Minggu, 25 Oktober 2026</option>
-        <option>Maaf, tidak bisa hadir</option>
+      <input id="n" required autocomplete="name" maxlength="100" placeholder="Nama Anda">
+      <label for="h">Status kehadiran</label>
+      <select id="h" required>
+        <option value="" disabled selected>Pilih status kehadiran</option>
+        <option value="hadir">Hadir</option>
+        <option value="tidak_hadir">Tidak Hadir</option>
       </select>
-      <label for="p">Ucapan &amp; doa</label>
-      <textarea id="p" rows="3"></textarea>
-      <button class="btn emas" type="submit">Kirim lewat WhatsApp</button>
+      <div class="message-label"><label for="p">Ucapan &amp; doa</label><span id="messageCount">0/500</span></div>
+      <textarea id="p" rows="4" maxlength="500" placeholder="Tulis ucapan atau doa Anda..."></textarea>
+      <small class="rsvp-public-note">Nama, status kehadiran, dan ucapan Anda tampil di bawah formulir dan dapat dibaca tamu lain.</small>
+      <button class="btn emas" id="rsvpSubmit" type="submit">Kirim Konfirmasi</button>
+      <p id="rsvpStatus" role="status" aria-live="polite"></p>
     </form>
+    <div class="guestbook" aria-labelledby="guestbookTitle">
+      <h3 id="guestbookTitle">Ucapan &amp; Kehadiran</h3>
+      <p id="guestbookStatus" role="status">Memuat ucapan...</p>
+      <div id="guestbookList"></div>
+      <button class="btn" id="loadMore" type="button" hidden>Lihat ucapan lainnya</button>
+    </div>
   </section>
 
   <footer>

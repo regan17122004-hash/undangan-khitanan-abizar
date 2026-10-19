@@ -1,0 +1,1 @@
+ALTER TABLE "confirmations" ADD COLUMN "owner_hash" text;
