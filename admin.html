@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kelola Konfirmasi — Undangan Abizar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/admin.js" defer></script>
+</head>
+<body class="admin-page">
+<main class="wrap">
+<section class="gelap">
+  <p class="eyebrow">Undangan Abizar</p>
+  <h1>Kelola Konfirmasi</h1>
+  <p id="adminStatus" role="status" aria-live="polite">Memeriksa akses...</p>
+  <form id="adminLogin" hidden>
+    <label for="adminEmail">Email admin</label>
+    <input id="adminEmail" type="email" required autocomplete="username">
+    <label for="adminPassword" id="passwordLabel">Kata sandi</label>
+    <input id="adminPassword" type="password" required autocomplete="current-password">
+    <button class="btn" id="adminSubmit" type="submit">Masuk</button>
+    <button class="admin-link" id="recoverPassword" type="button">Lupa kata sandi</button>
+  </form>
+  <button class="btn" id="adminLogout" type="button" hidden>Keluar</button>
+  <a class="admin-link" href="/">Kembali ke undangan</a>
+</section>
+<section id="adminEntries" hidden>
+  <h2>Ucapan &amp; Kehadiran</h2>
+  <p>Hapus kiriman yang tidak sesuai. Penghapusan bersifat permanen.</p>
+  <div id="adminList" class="guestbook"></div>
+  <button id="adminMore" type="button" class="btn" hidden>Lihat lainnya</button>
+</section>
+</main>
+</body>
+</html>
