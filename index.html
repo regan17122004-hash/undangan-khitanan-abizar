@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Khitanan Abizar Adriana Yusup</title>
+<meta name="description" content="Undangan khitanan Abizar Adriana Yusup, Minggu 25 Oktober 2026 di Cigasong, Majalengka.">
+<meta name="theme-color" content="#102b36">
+<meta property="og:title" content="Undangan Khitanan Abizar Adriana Yusup">
+<meta property="og:description" content="Dengan penuh syukur, kami mengundang Anda ke acara khitanan Abizar Adriana Yusup pada 25 Oktober 2026 di Cigasong, Majalengka.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- COVER -->
+<header class="cover" id="cover">
+  <div class="arch">
+    <svg class="moon" viewBox="0 0 64 64" aria-hidden="true"><path d="M44 8a26 26 0 1 0 12 40A22 22 0 0 1 44 8z" fill="currentColor"/><path d="M50 16l2 5 5 .5-4 3.5 1.3 5-4.3-3-4.3 3 1.3-5-4-3.5 5-.5z" fill="currentColor"/></svg>
+    <p class="kecil">Undangan Khitanan</p>
+    <h1 id="nama1"></h1>
+    <p class="tgl">25 Oktober 2026</p>
+    <p class="lokasi-cover">Cigasong · Majalengka</p>
+    <div class="tamu" id="tamuBox" hidden>
+      <span>Kepada Yth.</span><b id="tamu"></b>
+    </div>
+    <p class="cover-note">Dengan penuh syukur, kami mengundang Anda untuk turut mendoakan putra kami.</p>
+    <button class="btn" id="buka"><span>Buka Undangan</span><span aria-hidden="true">↓</span></button>
+  </div>
+</header>
+
+<main class="wrap" id="isi">
+
+  <section class="salam">
+    <p class="arab" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <p class="gap">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengkhitankan putra kami</p>
+    <h2 class="nama" id="nama2"></h2>
+    <p id="ortu"></p>
+    <div class="ornamen-pemisah" aria-hidden="true"><span>✦</span></div>
+    <p class="syukur">Dengan penuh rasa syukur atas karunia-Nya</p>
+  </section>
+
+  <section class="doa">
+    <p class="eyebrow">Doa &amp; Harapan</p>
+    <h2>Mohon Doa Restu</h2>
+    <div class="doa-kutip">
+      <span class="kutip-buka" aria-hidden="true">“</span>
+      <p>Semoga Allah SWT senantiasa menganugerahkan kesehatan dan keberkahan, serta menjadikan Abizar anak yang saleh, berbakti kepada orang tua, dan bermanfaat bagi sesama.</p>
+    </div>
+  </section>
+
+  <section class="gelap">
+    <p class="eyebrow">Catat tanggalnya</p>
+    <h2>Menuju Hari Acara</h2>
+    <div class="cd" role="timer">
+      <div><b id="c0">0</b><span>Hari</span></div>
+      <div><b id="c1">0</b><span>Jam</span></div>
+      <div><b id="c2">0</b><span>Menit</span></div>
+      <div><b id="c3">0</b><span>Detik</span></div>
+    </div>
+    <a class="btn emas" id="kalender" target="_blank" rel="noopener">Simpan ke Kalender</a>
+  </section>
+
+  <section>
+    <p class="eyebrow">Kami tunggu kehadirannya</p>
+    <h2>Waktu &amp; Tempat</h2>
+    <div id="acara" class="acara"></div>
+    <div class="alamat-kartu">
+      <span class="alamat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+      </span>
+      <span class="alamat-label">Lokasi Acara</span>
+      <div class="alamat">
+        <b id="tempat"></b>
+        <p id="alamat"></p>
+      </div>
+    </div>
+    <div class="aksi">
+      <a class="btn" id="maps" target="_blank" rel="noopener">Buka Google Maps</a>
+      <button class="btn garis" id="salin" type="button">Salin Alamat</button>
+    </div>
+  </section>
+
+  <section class="gelap">
+    <p class="eyebrow">Kabar kehadiran</p>
+    <h2>Konfirmasi Kehadiran</h2>
+    <p class="rsvp-note">Mohon kesediaannya mengisi konfirmasi berikut agar kami dapat menyambut kehadiran Anda.</p>
+    <form id="rsvp">
+      <label for="n">Nama</label>
+      <input id="n" required autocomplete="name">
+      <label for="h">Hadir pada</label>
+      <select id="h">
+        <option>Minggu, 25 Oktober 2026</option>
+        <option>Maaf, tidak bisa hadir</option>
+      </select>
+      <label for="p">Ucapan &amp; doa</label>
+      <textarea id="p" rows="3"></textarea>
+      <button class="btn emas" type="submit">Kirim lewat WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p class="eyebrow">Hormat kami</p>
+    <p>Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <p class="gap">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <h3 id="nama3"></h3>
+    <small>Keluarga Bapak Ucup Yusup &amp; Ibu Nur</small>
+  </footer>
+</main>
+
+<button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Putar musik latar">
+  <span class="music-note" aria-hidden="true">♫</span>
+  <span id="musicLabel">Putar musik</span>
+</button>
+<audio id="backgroundMusic" src="assets/Khitanan.mp3" autoplay loop preload="auto"></audio>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
