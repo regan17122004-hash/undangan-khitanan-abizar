@@ -903,3 +903,23 @@ footer small {
     animation: none;
   }
 }
+
+.message-label { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+#messageCount, .rsvp-public-note { color: #dedbd1; font-size: 12px; }
+#rsvpStatus { font-size: 13px; }
+#rsvpSubmit:disabled, #loadMore:disabled { opacity: .65; cursor: wait; transform: none; }
+.guestbook { max-width: 390px; margin: 38px auto 0; padding: 24px 20px; border: 1px solid #bd965155; border-radius: 14px; background: var(--ivory); color: var(--night); text-align: left; }
+.guestbook h3 { font-size: 28px; margin-bottom: 12px; }
+#guestbookStatus { color: #56666a; font-size: 13px; }
+.guest-entry { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 22px 0; border-bottom: 1px solid #ddd5c5; }
+.guest-entry:last-child { border-bottom: 0; padding-bottom: 0; }
+.guest-avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--sand); color: var(--night2); font: 700 22px var(--serif); }
+.guest-header { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.guest-header b { font-size: 14px; overflow-wrap: anywhere; }
+.attendance-badge { flex-shrink: 0; border-radius: 999px; padding: 2px 9px; font-size: 11px; line-height: 1.6; }
+.attending { background: #d8ecdf; color: #24593c; }
+.absent { background: #e3e5e6; color: #475259; }
+.guest-content time { display: block; margin-top: 3px; font-size: 11px; color: #627171; }
+.guest-content p { margin-top: 9px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; font-weight: 400; }
+#loadMore { width: 100%; font-size: 12px; }
+[hidden] { display: none !important; }
