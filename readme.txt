@@ -1,4 +1,4 @@
-UNDANGAN KHITANAN - Abizar Adriana Yusup
+UNDANGAN KHITANAN - Abizar Adriana Yusuf
 
 SIAP DI-HOSTING
 
