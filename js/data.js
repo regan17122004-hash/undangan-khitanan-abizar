@@ -1,6 +1,6 @@
 /* ====== UBAH DATA DI SINI ====== */
 const D = {
-  nama: "Abizar Adriana Yusup",
+  nama: "Abizar Adriana Yusuf",
   ortu: "Putra dari Bapak Ucup Yusup & Ibu Nur",
   acara: [
     {hari: "Minggu", tanggal: "25 Oktober 2026", waktu: "Pukul 08.00 WIB – selesai"}
