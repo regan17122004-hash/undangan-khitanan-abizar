@@ -464,6 +464,21 @@ h2 {
   font-style: italic;
 }
 
+.foto-keluarga {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 55%;
+  margin: 26px auto 0;
+  padding: 6px;
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  background: var(--ivory);
+  box-shadow: 0 12px 30px #102b3614;
+}
+
 .doa {
   overflow: hidden;
   background:
