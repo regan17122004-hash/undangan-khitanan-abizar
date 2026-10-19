@@ -1,5 +1,5 @@
 const $ = id => document.getElementById(id);
-["nama1","nama2","nama3"].forEach(i => $(i).textContent = D.nama);
+["nama1","nama2"].forEach(i => $(i).textContent = D.nama);
 $("ortu").textContent = D.ortu;
 $("tempat").textContent = D.tempat;
 $("alamat").textContent = D.alamat;
