@@ -1,7 +1,3 @@
-const authCallback = new URLSearchParams(location.hash.slice(1));
-if (authCallback.has("invite_token") || authCallback.has("recovery_token")) {
-  location.replace("/admin.html" + location.hash);
-}
 const $ = id => document.getElementById(id);
 ["nama1","nama2","nama3"].forEach(i => $(i).textContent = D.nama);
 $("ortu").textContent = D.ortu;
@@ -179,36 +175,34 @@ function renderEntry(entry, prepend = false) {
     message.textContent = entry.message;
     content.append(message);
   }
-  if (entry.canDelete) {
-    const removeButton = document.createElement("button");
-    removeButton.type = "button";
-    removeButton.className = "delete-entry";
-    removeButton.textContent = "Hapus";
-    removeButton.setAttribute("aria-label", `Hapus kiriman ${entry.name}`);
-    removeButton.addEventListener("click", async () => {
-      if (!confirm(`Hapus konfirmasi dan ucapan dari ${entry.name}? Tindakan ini tidak dapat dibatalkan.`)) return;
-      removeButton.disabled = true;
-      removeButton.textContent = "Menghapus...";
-      try {
-        const response = await fetch(`/api/rsvp?id=${entry.id}`, { method: "DELETE" });
-        if (!response.ok) {
-          const data = await response.json();
-          throw new Error(data.error || "Kiriman gagal dihapus.");
-        }
-        article.remove();
-        $("rsvpStatus").textContent = "Konfirmasi dan ucapan berhasil dihapus.";
-        if (!guestbookList.childElementCount) {
-          if (!$("loadMore").hidden) await loadEntries();
-          else $("guestbookStatus").textContent = "Belum ada ucapan. Jadilah yang pertama mengirim doa untuk Abizar.";
-        }
-      } catch (error) {
-        $("rsvpStatus").textContent = error.message || "Penghapusan gagal. Silakan coba lagi.";
-        removeButton.disabled = false;
-        removeButton.textContent = "Hapus";
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "delete-entry";
+  removeButton.textContent = "Hapus";
+  removeButton.setAttribute("aria-label", `Hapus kiriman ${entry.name}`);
+  removeButton.addEventListener("click", async () => {
+    if (!confirm(`Hapus konfirmasi dan ucapan dari ${entry.name}? Tindakan ini tidak dapat dibatalkan.`)) return;
+    removeButton.disabled = true;
+    removeButton.textContent = "Menghapus...";
+    try {
+      const response = await fetch(`/api/rsvp?id=${entry.id}`, { method: "DELETE" });
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Kiriman gagal dihapus.");
       }
-    });
-    content.append(removeButton);
-  }
+      article.remove();
+      $("rsvpStatus").textContent = "Konfirmasi dan ucapan berhasil dihapus.";
+      if (!guestbookList.childElementCount) {
+        if (!$("loadMore").hidden) await loadEntries();
+        else $("guestbookStatus").textContent = "Belum ada ucapan. Jadilah yang pertama mengirim doa untuk Abizar.";
+      }
+    } catch (error) {
+      $("rsvpStatus").textContent = error.message || "Penghapusan gagal. Silakan coba lagi.";
+      removeButton.disabled = false;
+      removeButton.textContent = "Hapus";
+    }
+  });
+  content.append(removeButton);
   article.append(avatar, content);
   if (prepend) guestbookList.prepend(article);
   else guestbookList.append(article);
@@ -260,7 +254,6 @@ $("rsvp").addEventListener("submit", async e => {
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Konfirmasi gagal dikirim. Silakan coba lagi.");
-    if (data.entry.canDelete) $("ownerNote").hidden = false;
     renderEntry(data.entry, true);
     if (!lastEntryId) lastEntryId = data.entry.id;
     $("guestbookStatus").textContent = "";
